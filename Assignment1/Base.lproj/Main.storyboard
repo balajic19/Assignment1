@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Assignment1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rev-20-Dt2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dogsCustomcellIdentifier" rowHeight="44" id="jdy-cf-xVO" customClass="CustomCell" customModule="Assignment1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jdy-cf-xVO" id="ur2-aj-dUL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmv-PG-Wno">
+                                                    <rect key="frame" x="20" y="0.0" width="42" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gi-8z-vDd">
+                                                    <rect key="frame" x="64" y="0.0" width="39.5" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.30588235289999999" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Kmv-PG-Wno" secondAttribute="bottom" id="1Ue-sa-xFc"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Gi-8z-vDd" secondAttribute="trailing" constant="10" id="7oK-XI-LaD"/>
+                                                <constraint firstItem="4Gi-8z-vDd" firstAttribute="leading" secondItem="Kmv-PG-Wno" secondAttribute="trailing" constant="2" id="J2T-vV-3Cc"/>
+                                                <constraint firstItem="Kmv-PG-Wno" firstAttribute="top" secondItem="ur2-aj-dUL" secondAttribute="top" id="czD-cD-4PA"/>
+                                                <constraint firstItem="4Gi-8z-vDd" firstAttribute="top" secondItem="Kmv-PG-Wno" secondAttribute="top" id="gac-mq-Xrq"/>
+                                                <constraint firstItem="Kmv-PG-Wno" firstAttribute="leading" secondItem="ur2-aj-dUL" secondAttribute="leading" constant="20" id="gcg-wp-nY1"/>
+                                                <constraint firstItem="4Gi-8z-vDd" firstAttribute="bottom" secondItem="Kmv-PG-Wno" secondAttribute="bottom" id="grk-t4-OlN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dogsNameLabel" destination="Kmv-PG-Wno" id="6Jg-r1-geK"/>
+                                            <outlet property="dogsSubBreedsLabel" destination="4Gi-8z-vDd" id="Afv-1n-RbN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RyH-C2-pnE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4Th-a5-BgE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rev-20-Dt2" secondAttribute="trailing" id="5Q2-ch-iDN"/>
+                            <constraint firstItem="rev-20-Dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JuI-fe-JRd"/>
+                            <constraint firstItem="rev-20-Dt2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K2h-G4-2hh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rev-20-Dt2" secondAttribute="bottom" id="NpX-v2-Lhe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dogsListTableView" destination="rev-20-Dt2" id="js7-Is-KHZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="102"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
