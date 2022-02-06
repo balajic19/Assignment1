@@ -34,17 +34,17 @@ class ViewController: UIViewController {
             return
           }
           
-          
-        })
-        task.resume()
-      }
+          guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+            print("Error with the response, unexpected status code: \(response)")
+            return
+          }
 
-}
-
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+          if let data = data,
+            let dogsList = try? JSONDecoder().decode(Dogs.self, from: data) {
+              completionHandler(dogsList)
+          }
+F
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dogsCustomcellIdentifier", for: indexPath) as! CustomCell
