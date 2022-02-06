@@ -68,11 +68,22 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dogslist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dogsCustomcellIdentifier", for: indexPath) as! CustomCell
+        cell.dogsSubBreedsLabel.isHidden = true
+        if let dictDog = dogslist[indexPath.row] as? NSMutableDictionary {
+            if let dogName = dictDog.value(forKey: "name") as? String {
+                cell.dogsNameLabel.text = dogName
+            }
+            if let dogSubBreed = dictDog.value(forKey: "breedName") as? [String], dogSubBreed.count > 0 {
+                cell.dogsSubBreedsLabel.isHidden = false
+                let combineTheText = dogSubBreed.joined(separator: ",")
+                cell.dogsSubBreedsLabel.text = ": \(combineTheText)"
+            }
+        }
         
         return cell
     }
